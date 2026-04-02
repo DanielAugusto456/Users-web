@@ -162,7 +162,7 @@
             </span>
           </label>
           <div class="control">
-            <input class="input" type="text" placeholder="Ej:usuario@verde" autocomplete="off">
+            <input class="input" type="text" placeholder="Ej:usuario@verde" autocomplete="off" id="txt_nombre">
           </div>
         </div>
 
@@ -174,17 +174,17 @@
             </span>
           </label>
           <div class="control">
-            <input class="input" type="password" placeholder="••••••••" autocomplete="off">
+            <input class="input" type="password" placeholder="••••••••" autocomplete="off" id="txt_contraseña">
           </div>
         </div>
 
         <!-- Botones: Iniciar sesión y Registrarse -->
         <div class="buttons-group mt-5">
-          <button class="button is-green-solid is-medium">
+          <button class="button is-green-solid is-medium" id="btn_iniciar">
             <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
             <span>Iniciar sesión</span>
           </button>
-          <button class="button is-dark-green is-medium">
+          <button class="button is-dark-green is-medium" id="btn_registrarse">
             <span class="icon"><i class="fas fa-user-plus"></i></span>
             <span>Registrarse</span>
           </button>
@@ -193,5 +193,6 @@
       </form>
     </div>
   </div>
+  <script src="js/login.js"></script>
 </body>
 </html>
