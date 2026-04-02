@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Registro | Black & Green</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <style>
+    body {
+      background-color: #0a0f0a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      padding: 1.5rem;
+    }
+
+    .register-card {
+      background-color: #0b0e0b;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(72, 187, 120, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .register-card:hover {
+      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(72, 187, 120, 0.5);
+    }
+
+    .title.is-green-glow {
+      color: #4ade80;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-shadow: 0 2px 5px rgba(74, 222, 128, 0.2);
+      border-bottom: 2px solid rgba(74, 222, 128, 0.4);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 0.5rem;
+      font-size: 2.2rem;
+    }
+
+    .label {
+      color: #b9fbc0 !important;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .input {
+      background-color: #030603;
+      border: 1px solid #2e7d32;
+      color: #e2ffe6;
+      border-radius: 0.75rem;
+      transition: all 0.2s;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .input:focus {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 0.125em rgba(74, 222, 128, 0.3);
+      background-color: #071007;
+      color: #f0fff0;
+    }
+
+    .input::placeholder {
+      color: #446b47;
+      font-size: 0.9rem;
+    }
+
+    .button.is-green-solid {
+      background-color: #15803d;
+      border: none;
+      color: white;
+      font-weight: 700;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+      transition: all 0.2s;
+    }
+
+    .button.is-green-solid:hover {
+      background-color: #166534;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(34, 197, 94, 0.25);
+      color: white;
+    }
+
+    .button.is-dark-green {
+      background-color: #0f1f0f;
+      border: 1px solid #2e7d32;
+      color: #c0f2c0;
+      font-weight: 600;
+      border-radius: 2rem;
+      transition: all 0.25s;
+    }
+
+    .button.is-dark-green:hover {
+      background-color: #1b3a1b;
+      border-color: #4ade80;
+      color: #eaffea;
+      transform: translateY(-1px);
+    }
+
+    .buttons-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .buttons-group .button {
+      flex: 1;
+      justify-content: center;
+    }
+
+    hr {
+      background-color: #2e5f2e;
+      height: 1px;
+    }
+
+    .help {
+      color: #86efac !important;
+    }
+
+    @media (max-width: 550px) {
+      .register-card {
+        margin: 0.5rem;
+      }
+      .buttons-group {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .title.is-green-glow {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-card">
+    <div class="card-content" style="padding: 2rem 1.8rem;">
+      <div class="has-text-centered mb-5">
+        <h1 class="title is-green-glow is-size-1-tablet" style="font-size: 2.5rem;">
+          REGISTER
+        </h1>
+      </div>
+
+      <form onsubmit="return false;">
+        <div class="field">
+          <label class="label">
+            Nombre completo
+          </label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Ej: María González Pérez" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Correo electrónico
+          </label>
+          <div class="control">
+            <input class="input" type="email" placeholder="usuario@ejemplo.com" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Contraseña
+          </label>
+          <div class="control">
+            <input class="input" type="password" placeholder="··········" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Confirmar contraseña
+          </label>
+          <div class="control">
+            <input class="input" type="password" placeholder="Vuelve a escribir tu contraseña" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="buttons-group mt-5">
+          <button class="button is-green-solid is-medium">
+            Registrar
+          </button>
+          <button class="button is-dark-green is-medium">
+            Salir
+          </button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
