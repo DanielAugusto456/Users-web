@@ -1,9 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Login | Black & Green</title>
+  <!-- Bulma CSS (versión estable más reciente) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <!-- Font Awesome 6 (opcional, para pequeños iconos opcionales, pero no es necesario para el diseño) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+
+    body {
+      background-color: #0a0f0a;  
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .login-card {
+      background-color: #0b0e0b;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(72, 187, 120, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      max-width: 420px;
+      width: 100%;
+      margin: 1.5rem;
+    }
+
+    .login-card:hover {
+      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(72, 187, 120, 0.5);
+    }
+
+    .title.is-green-glow {
+      color: #4ade80;        
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-shadow: 0 2px 5px rgba(74, 222, 128, 0.2);
+      border-bottom: 2px solid rgba(74, 222, 128, 0.4);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .label {
+      color: #b9fbc0 !important;   
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .input {
+      background-color: #030603;
+      border: 1px solid #2e7d32;
+      color: #e2ffe6;
+      border-radius: 0.75rem;
+      transition: all 0.2s;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .input:focus {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 0.125em rgba(74, 222, 128, 0.3);
+      background-color: #071007;
+      color: #f0fff0;
+    }
+
+    .input::placeholder {
+      color: #446b47;
+      font-size: 0.9rem;
+    }
+
+    .button.is-dark-green {
+      background-color: #0f1f0f;
+      border: 1px solid #2e7d32;
+      color: #c0f2c0;
+      font-weight: 600;
+      border-radius: 2rem;
+      transition: all 0.25s;
+    }
+
+    .button.is-dark-green:hover {
+      background-color: #1b3a1b;
+      border-color: #4ade80;
+      color: #eaffea;
+      transform: translateY(-1px);
+    }
+
+    .button.is-green-solid {
+      background-color: #15803d;
+      border: none;
+      color: white;
+      font-weight: 700;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+      transition: all 0.2s;
+    }
+
+    .button.is-green-solid:hover {
+      background-color: #166534;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(34, 197, 94, 0.25);
+      color: white;
+    }
+
+    .help, .has-text-green-light {
+      color: #86efac !important;
+    }
+
+    .buttons-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .buttons-group .button {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .icon-green {
+      color: #4ade80;
+      margin-right: 0.4rem;
+    }
+
+    hr {
+      background-color: #2e5f2e;
+      height: 1px;
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        margin: 1rem;
+      }
+      .buttons-group {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    
+    <!-- Titulo -->
+  <div class="login-card">
+    <div class="card-content" style="padding: 2rem 1.8rem;">
+      <div class="has-text-centered mb-5">
+        <span class="icon-text is-align-items-center">
+          <h1 class="title is-green-glow is-size-1-tablet is-size-2-mobile" style="font-size: 2.5rem;">
+            Login
+          </h1>
+        </span>
+      </div>
+
+      <form onsubmit="return false;">
+        <!-- Campo Nombre de usuario -->
+        <div class="field">
+          <label class="label">
+            <span class="text">
+              <span>Nombre de usuario</span>
+            </span>
+          </label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Ej:usuario@verde" autocomplete="off">
+          </div>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="field">
+          <label class="label">
+            <span class="text">
+              <span>Contraseña</span>
+            </span>
+          </label>
+          <div class="control">
+            <input class="input" type="password" placeholder="••••••••" autocomplete="off">
+          </div>
+        </div>
+
+        <!-- Botones: Iniciar sesión y Registrarse -->
+        <div class="buttons-group mt-5">
+          <button class="button is-green-solid is-medium">
+            <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+            <span>Iniciar sesión</span>
+          </button>
+          <button class="button is-dark-green is-medium">
+            <span class="icon"><i class="fas fa-user-plus"></i></span>
+            <span>Registrarse</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
 </body>
 </html>
