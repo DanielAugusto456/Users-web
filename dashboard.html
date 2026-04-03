@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Dashboard | Black & Green</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <style>
+    body {
+      background-color: #0a0f0a;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .dashboard-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card-bg {
+      background-color: #0b0e0b;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(72, 187, 120, 0.2);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card-bg:hover {
+      box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(72, 187, 120, 0.5);
+    }
+
+    .title-dashboard {
+      color: #4ade80;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      text-shadow: 0 2px 5px rgba(74, 222, 128, 0.2);
+      border-bottom: 2px solid rgba(74, 222, 128, 0.4);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 0.5rem;
+    }
+
+    .label-custom {
+      color: #b9fbc0 !important;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .input-custom {
+      background-color: #030603;
+      border: 1px solid #2e7d32;
+      color: #e2ffe6;
+      border-radius: 0.75rem;
+      transition: all 0.2s;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .input-custom:focus {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 0.125em rgba(74, 222, 128, 0.3);
+      background-color: #071007;
+      color: #f0fff0;
+    }
+
+    .input-custom::placeholder {
+      color: #446b47;
+    }
+
+    .button-save {
+      background-color: #15803d;
+      border: none;
+      color: white;
+      font-weight: 700;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+      transition: all 0.2s;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .button-save:hover {
+      background-color: #166534;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(34, 197, 94, 0.25);
+    }
+
+    .search-input {
+      background-color: #030603;
+      border: 1px solid #2e7d32;
+      color: #e2ffe6;
+      border-radius: 2rem;
+    }
+
+    .search-input:focus {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 0.125em rgba(74, 222, 128, 0.3);
+      background-color: #071007;
+    }
+
+    .user-item {
+      background-color: #0f130f;
+      border: 1px solid #2e5f2e;
+      border-radius: 1rem;
+      transition: background 0.2s;
+      margin-bottom: 0.75rem;
+    }
+
+    .user-item:hover {
+      background-color: #161f16;
+      border-color: #4ade80;
+    }
+
+    .user-name {
+      color: #c8f0c8;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .user-email {
+      color: #8bc48b;
+      font-size: 0.85rem;
+    }
+
+    hr {
+      background-color: #2e5f2e;
+      height: 1px;
+    }
+
+    .help-text {
+      color: #86efac !important;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="has-text-centered mb-5">
+      <h1 class="title-dashboard is-size-1-tablet is-size-2-mobile" style="font-size: 2.2rem;">
+        DASHBOARD
+      </h1>
+    </div>
+
+    <div class="card-bg mb-5">
+      <div class="card-content" style="padding: 1.8rem;">
+        <form onsubmit="return false;">
+          <div class="field">
+            <label class="label-custom">Nombre completo</label>
+            <div class="control">
+              <input class="input-custom input" type="text" placeholder="Ej: María González Pérez" id="txt_name">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label-custom">Correo electrónico</label>
+            <div class="control">
+              <input class="input-custom input" type="email" placeholder="usuario@ejemplo.com" id="txt_email">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label-custom">Contraseña</label>
+            <div class="control">
+              <input class="input-custom input" type="password" placeholder="··········" id="txt_password">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label-custom">Confirmar contraseña</label>
+            <div class="control">
+              <input class="input-custom input" type="password" placeholder="Vuelve a escribir tu contraseña" id="txt_confirm_password">
+            </div>
+          </div>
+
+          <div class="field mt-5">
+            <button id="btn_save" class="button-save button is-medium">Guardar cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card-bg">
+        <div class="card-content" style="padding: 1.8rem;">
+            <div class="field">
+                <label class="label-custom">Buscar usuario</label>
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <input class="search-input input" type="text" id="txt_search" placeholder="Escribe nombre o correo...">
+                </div>
+                <div class="control">
+                    <button class="button is-success" id="btn_search">
+                        Buscar
+                    </button>
+                </div>
+        </div>
+    </div>
+
+        <hr class="my-4">
+
+        <div id="user_list">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="Js/dashboard.js" type="module"></script>
+</body>
+</html>

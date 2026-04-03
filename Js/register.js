@@ -1,4 +1,4 @@
-import { ReturnUsers, SaveUser, obtenerUltimoId } from "../Js/utils.js";
+import { ReturnUsers, SaveUser} from "../Js/utils.js";
 
 const txt_name = document.getElementById("txt_name");
 const txt_email = document.getElementById("txt_email");
