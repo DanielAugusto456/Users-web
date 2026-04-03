@@ -1,19 +1,9 @@
+import { ReturnUsers } from "../Js/utils.js";
+
 const txt_nombre = document.getElementById("txt_nombre");
 const txt_contraseña = document.getElementById("txt_contraseña");
 const btn_login = document.getElementById("btn_iniciar");
 const btn_register = document.getElementById("btn_registrarse");
-
-async function ReturnUsers() {
-    try {
-        const response = await fetch("./Data/users.json");
-        const users = await response.json();
-        return users;
-        
-    } catch (error) {
-        alert("Error al obtener los usuarios: " + error);
-        return [];
-    }
-}
 
 btn_login.addEventListener("click", async () => {
     const users = await ReturnUsers();

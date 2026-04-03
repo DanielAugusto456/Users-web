@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Registro | Black & Green</title>
+  <title>Registro</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   <style>
     body {
@@ -152,7 +152,7 @@
             Nombre completo
           </label>
           <div class="control">
-            <input class="input" type="text" placeholder="Ej: María González Pérez" autocomplete="off">
+            <input class="input" type="text" placeholder="Ej: María González Pérez" autocomplete="off" id="txt_name">
           </div>
         </div>
 
@@ -161,7 +161,7 @@
             Correo electrónico
           </label>
           <div class="control">
-            <input class="input" type="email" placeholder="usuario@ejemplo.com" autocomplete="off">
+            <input class="input" type="email" placeholder="usuario@ejemplo.com" autocomplete="off" id="txt_email">
           </div>
         </div>
 
@@ -170,7 +170,7 @@
             Contraseña
           </label>
           <div class="control">
-            <input class="input" type="password" placeholder="··········" autocomplete="off">
+            <input class="input" type="password" placeholder="··········" autocomplete="off" id="txt_password">
           </div>
         </div>
 
@@ -179,15 +179,15 @@
             Confirmar contraseña
           </label>
           <div class="control">
-            <input class="input" type="password" placeholder="Vuelve a escribir tu contraseña" autocomplete="off">
+            <input class="input" type="password" placeholder="Vuelve a escribir tu contraseña" autocomplete="off" id="txt_confirm_password">
           </div>
         </div>
 
         <div class="buttons-group mt-5">
-          <button class="button is-green-solid is-medium">
+          <button class="button is-green-solid is-medium" id="btn_register">
             Registrar
           </button>
-          <button class="button is-dark-green is-medium">
+          <button class="button is-dark-green is-medium" id="btn_exit">
             Salir
           </button>
         </div>
@@ -195,5 +195,6 @@
       </form>
     </div>
   </div>
+  <script src="Js/register.js" type="module"></script>
 </body>
 </html>
