@@ -57,14 +57,14 @@ function displayUsers(users) {
                 <div class="user-name is-size-5">${user.nombre_completo}</div>
                 <div class="user-email mt-1">${user.correo_electronico}</div>
                 <div class="action-buttons mt-2">
-                    <button class="button-update button is-small"
+                    <button class="button-update button is-small" id="${user.nombre_completo + "update"}"
                             data-id=${user.id} 
                             data-password=${user.contrasena} 
                             data-name=${user.nombre_completo} 
                             data-email=${user.correo_electronico}>
                     Actualizar
                     </button>
-                    <button class="button-delete button is-small" 
+                    <button class="button-delete button is-small" id="${user.nombre_completo + "delete"}"
                             data-id="${user.id}"
                             data-name="${user.nombre_completo}">
                     Borrar
