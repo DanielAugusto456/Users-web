@@ -3,37 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Login</title>
-  <!-- Bulma CSS (versión estable más reciente) -->
+  <title>Registro</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-
     body {
-      background-color: #0a0f0a;  
+      background-color: #0a0f0a;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      padding: 1.5rem;
     }
 
-    .login-card {
+    .register-card {
       background-color: #0b0e0b;
       border-radius: 1.5rem;
       box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(72, 187, 120, 0.2);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      max-width: 420px;
+      max-width: 500px;
       width: 100%;
-      margin: 1.5rem;
+      margin: 0 auto;
     }
 
-    .login-card:hover {
+    .register-card:hover {
       box-shadow: 0 25px 40px -14px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(72, 187, 120, 0.5);
     }
 
     .title.is-green-glow {
-      color: #4ade80;        
+      color: #4ade80;
       font-weight: 700;
       letter-spacing: -0.3px;
       text-shadow: 0 2px 5px rgba(74, 222, 128, 0.2);
@@ -41,10 +39,11 @@
       display: inline-block;
       padding-bottom: 6px;
       margin-bottom: 0.5rem;
+      font-size: 2.2rem;
     }
 
     .label {
-      color: #b9fbc0 !important;   
+      color: #b9fbc0 !important;
       font-weight: 500;
       letter-spacing: 0.3px;
     }
@@ -70,22 +69,6 @@
       font-size: 0.9rem;
     }
 
-    .button.is-dark-green {
-      background-color: #0f1f0f;
-      border: 1px solid #2e7d32;
-      color: #c0f2c0;
-      font-weight: 600;
-      border-radius: 2rem;
-      transition: all 0.25s;
-    }
-
-    .button.is-dark-green:hover {
-      background-color: #1b3a1b;
-      border-color: #4ade80;
-      color: #eaffea;
-      transform: translateY(-1px);
-    }
-
     .button.is-green-solid {
       background-color: #15803d;
       border: none;
@@ -103,8 +86,20 @@
       color: white;
     }
 
-    .help, .has-text-green-light {
-      color: #86efac !important;
+    .button.is-dark-green {
+      background-color: #0f1f0f;
+      border: 1px solid #2e7d32;
+      color: #c0f2c0;
+      font-weight: 600;
+      border-radius: 2rem;
+      transition: all 0.25s;
+    }
+
+    .button.is-dark-green:hover {
+      background-color: #1b3a1b;
+      border-color: #4ade80;
+      color: #eaffea;
+      transform: translateY(-1px);
     }
 
     .buttons-group {
@@ -119,79 +114,87 @@
       justify-content: center;
     }
 
-    .icon-green {
-      color: #4ade80;
-      margin-right: 0.4rem;
-    }
-
     hr {
       background-color: #2e5f2e;
       height: 1px;
     }
 
-    @media (max-width: 480px) {
-      .login-card {
-        margin: 1rem;
+    .help {
+      color: #86efac !important;
+    }
+
+    @media (max-width: 550px) {
+      .register-card {
+        margin: 0.5rem;
       }
       .buttons-group {
         flex-direction: column;
         gap: 0.8rem;
       }
+      .title.is-green-glow {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-    <!-- Titulo -->
-  <div class="login-card">
+  <div class="register-card">
     <div class="card-content" style="padding: 2rem 1.8rem;">
       <div class="has-text-centered mb-5">
-        <span class="icon-text is-align-items-center">
-          <h1 class="title is-green-glow is-size-1-tablet is-size-2-mobile" style="font-size: 2.5rem;">
-            Login
-          </h1>
-        </span>
+        <h1 class="title is-green-glow is-size-1-tablet" style="font-size: 2.5rem;">
+          REGISTER
+        </h1>
       </div>
 
       <form onsubmit="return false;">
-        <!-- Campo Nombre de usuario -->
         <div class="field">
           <label class="label">
-            <span class="text">
-              <span>Nombre de usuario</span>
-            </span>
+            Nombre completo
           </label>
           <div class="control">
-            <input class="input" type="text" placeholder="Ej:usuario@verde" autocomplete="off" id="txt_nombre">
+            <input class="input" type="text" placeholder="Ej: María González Pérez" autocomplete="off" id="txt_name">
           </div>
         </div>
 
-        <!-- Campo Contraseña -->
         <div class="field">
           <label class="label">
-            <span class="text">
-              <span>Contraseña</span>
-            </span>
+            Correo electrónico
           </label>
           <div class="control">
-            <input class="input" type="password" placeholder="••••••••" autocomplete="off" id="txt_contraseña">
+            <input class="input" type="email" placeholder="usuario@ejemplo.com" autocomplete="off" id="txt_email">
           </div>
         </div>
 
-        <!-- Botones: Iniciar sesión y Registrarse -->
+        <div class="field">
+          <label class="label">
+            Contraseña
+          </label>
+          <div class="control">
+            <input class="input" type="password" placeholder="··········" autocomplete="off" id="txt_password">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">
+            Confirmar contraseña
+          </label>
+          <div class="control">
+            <input class="input" type="password" placeholder="Vuelve a escribir tu contraseña" autocomplete="off" id="txt_confirm_password">
+          </div>
+        </div>
+
         <div class="buttons-group mt-5">
-          <button class="button is-green-solid is-medium" id="btn_iniciar">
-            <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
-            <span>Iniciar sesión</span>
+          <button class="button is-green-solid is-medium" id="btn_register">
+            Registrar
           </button>
-          <button class="button is-dark-green is-medium" id="btn_registrarse">
-            <span class="icon"><i class="fas fa-user-plus"></i></span>
-            <span>Registrarse</span>
+          <button class="button is-dark-green is-medium" id="btn_exit">
+            Salir
           </button>
         </div>
-
+        </div>
       </form>
     </div>
   </div>
-  <script src="js/login.js" type="module"></script>
+  <script src="Js/register.js" type="module"></script>
 </body>
 </html>
